@@ -1,0 +1,124 @@
+/* src/components/CardSection.module.css */
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* Adjust the height as needed */
+    padding: 50px;
+    /* Provides some spacing from the edges */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading{
+    font-size: 3rem;
+        /* Increased from 2.5rem to 3rem */
+        margin: 1rem 0;
+}
+.headingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* Ensure the heading is above the cards */
+    text-align: center;
+}
+
+.lottieAnimation {
+    width: 100px;
+    /* Adjust as necessary */
+    margin: 0 auto;
+}
+
+.cardContainer {
+    position: absolute;
+    will-change: transform;
+    /* Optimizes animations */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific positions for each card */
+.card-0 {
+    top: 15%;
+    left: 5%;
+}
+
+.card-1 {
+    top: -10%;
+    left: 40%;
+}
+
+.card-2 {
+    top: 60%;
+    left: 15%;
+}
+
+.card-3 {
+    top: 20%;
+    right: 35%;
+}
+
+.card-4 {
+    bottom: 85%;
+    right: -10%;
+}
+
+.card-5 {
+    bottom: 5%;
+    right: 20%;
+}
+.card-6 {
+    top: 50%;
+    right: 95%;
+}
+
+.card-7 {
+    bottom: 25%;
+    right: -10%;
+}
+
+.card-8 {
+    bottom: 50%;
+    right: 9%;
+}
+.card-9 {
+    bottom: 5%;
+    right: 45%;
+}
+
+/* Hover effect for all cards */
+.cardContainer:hover {
+    transform: scale(1.05);
+    z-index: 3;
+    /* Ensures the hovered card rises above the others */
+}
+
+/* Ensure cards have a fixed size and some spacing */
+.card {
+    width: 250px;
+    /* Fixed width for all cards */
+    margin: 0;
+    /* Remove margin */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+@media (max-width: 768px) {
+
+    /* Adjustments for smaller screens */
+    .cardContainer {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .headingContainer {
+        position: static;
+        transform: none;
+    }
+}

@@ -1,0 +1,192 @@
+.titleContainer {
+    /* This will position the title and animation next to each other */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Ensures responsiveness */
+}
+
+.title {
+    /* Style for the title */
+    margin-left: 1rem;
+    /* Adjust spacing as needed */
+    flex-grow: 2;
+    /* Allows title to grow and fill available space */
+}
+
+.lottieContainer {
+    /* Style for the Lottie animation container */
+    max-width: 128px;
+    /* Adjust based on Lottie animation size */
+    max-height: 128px;
+    flex-grow: 1;
+    /* Allows Lottie container to grow */
+}
+
+.description {
+    /* Style for the description paragraph */
+    margin-left: 1rem;
+    /* Align with the title */
+    text-align: left;
+    /* Left align the text */
+    width: 100%;
+    /* Full width for standalone line */
+}
+
+/* ... (rest of your existing CSS) ... */
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Add space below the header */
+}
+
+.lottieContainer {
+    display: inline-block;
+    /* Or 'block' if you want it on a new line */
+    margin-left: 20px;
+    /* Space from the title */
+    /* Adjust height and width as per your Lottie animation's aspect ratio */
+}
+.scrollContainer {
+    position: relative;
+    max-height: 700px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.itemList {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 0;
+    margin-bottom:120px;
+    scroll-behavior: smooth;
+    /* Enables smooth scrolling */
+    -ms-overflow-style: none;
+    /* Hides scrollbar for IE and Edge */
+    scrollbar-width: none;
+    /* Hides scrollbar for Firefox */
+}
+
+.itemList::-webkit-scrollbar {
+    display: none;
+    /* Hides scrollbar for webkit-based browsers */
+}
+
+.item {
+    position: relative;
+    width: 50%;
+    max-width: 50%;
+    min-height: 100px;
+    padding: 20px;
+    margin: 0px auto;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+    border-left: 4px solid #ccc;
+}
+.itemIndicator {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    /* Adjusted for positioning outside the box */
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    /* Default non-highlighted color */
+    transition: background-color 0.3s, transform 0.3s, left 0.3s;
+    /* Added left to the transition */
+}
+
+.item.highlighted .itemIndicator {
+    background-color: #3498db;
+    /* Highlighted background color */
+    transform: translateY(-50%) scale(1.2);
+    /* Scale effect */
+    left: -12px;
+    /* Position the indicator further out when highlighted */
+}
+
+.item.highlighted {
+    border-left: 4px solid #3498db;
+    background-color: #f7f7f7;
+    border-radius:10px;
+}
+
+.item.highlighted .itemIndicator {
+    position:absolute;
+    transform: translateY(-50%) scale(1.2);
+        /* Highlighted border color */
+        left: -12px;
+    background-color: #3498db;
+}
+/* Add custom scrollbar styles as needed */
+
+/* ... Rest of your CSS ... */
+/* Scrollbar styles for Webkit browsers */
+.itemList::-webkit-scrollbar {
+    width: 8px;
+}
+
+.itemList::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.itemList::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.itemList::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Scrollbar styles for Firefox */
+.itemList {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.loader {
+    margin: 20px 0;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.blurTop,
+.blurBottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40px;
+    pointer-events: none;
+}
+
+.blurTop {
+    top: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), transparent);
+}
+
+.blurBottom {
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
+}

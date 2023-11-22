@@ -1,0 +1,31 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* styles/globals.css */
+.leading-tighter {
+    line-height: 1;
+    /* Adjust this value as needed */
+}
+
+/* styles/global.css */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 0 7px 14px rgba(0, 0, 0, 0.24);
+}
+
+.scroll-item {
+    transition: opacity 0.3s ease-in-out;
+    margin-bottom: 2rem;
+    /* Add more styles as needed */
+}
+
+/* styles/globals.css */
+html {
+    scroll-behavior: smooth;
+}
